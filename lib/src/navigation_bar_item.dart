@@ -4,9 +4,6 @@ import 'package:animated_bottom_navigation_bar/src/tab_item.dart';
 
 class NavigationBarItem extends StatelessWidget {
   final bool isActive;
-  final double bubbleRadius;
-  final double maxBubbleRadius;
-  final Color? bubbleColor;
   final Color? activeColor;
   final Color? inactiveColor;
   final IconData? iconData;
@@ -17,9 +14,6 @@ class NavigationBarItem extends StatelessWidget {
 
   NavigationBarItem({
     required this.isActive,
-    required this.bubbleRadius,
-    required this.maxBubbleRadius,
-    required this.bubbleColor,
     required this.activeColor,
     required this.inactiveColor,
     required this.iconData,
@@ -33,13 +27,7 @@ class NavigationBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox.expand(
-        child: CustomPaint(
-          painter: BubblePainter(
-            bubbleRadius: isActive ? bubbleRadius : 0,
-            bubbleColor: bubbleColor,
-            maxBubbleRadius: maxBubbleRadius,
-          ),
-          child: InkWell(
+        child: InkWell(
             child: Transform.scale(
               scale: isActive ? iconScale : 1,
               child: TabItem(
@@ -58,7 +46,6 @@ class NavigationBarItem extends StatelessWidget {
             onTap: onTap,
           ),
         ),
-      ),
     );
   }
 }

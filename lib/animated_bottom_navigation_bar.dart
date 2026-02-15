@@ -477,9 +477,6 @@ class _AnimatedBottomNavigationBarState
       items.add(
         NavigationBarItem(
           isActive: isActive,
-          bubbleRadius: _bubbleRadius,
-          maxBubbleRadius: widget.splashRadius,
-          bubbleColor: widget.splashColor,
           activeColor: widget.activeColor,
           inactiveColor: widget.inactiveColor,
           child: widget.tabBuilder?.call(i, isActive),
